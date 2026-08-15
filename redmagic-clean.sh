@@ -23,6 +23,7 @@ usage() {
     cat <<EOF
 Usage:
   ./redmagic-clean.sh audit
+  ./redmagic-clean.sh version
   ./redmagic-clean.sh help
 EOF
 }
@@ -39,6 +40,10 @@ main() {
             fi
 
             audit_run
+            ;;
+
+        version|-v|--version)
+            printf 'RedMagic Clean v%s\n' "$RMC_VERSION"
             ;;
 
         help|-h|--help)
